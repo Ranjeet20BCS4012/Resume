@@ -3,101 +3,266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjeet Singh - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Ranjeet Singh - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* General Styles */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
-      line-height: 1.6;
-      background: #f4f4f4;
+      background: #f5f7fa;
+      color: #222;
+      min-height: 100vh;
+      min-width: 100vw;
+      width: 100vw;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
     }
-    ... (styles remain the same)
+    header {
+      background: #6c63ff;
+      color: #fff;
+      padding: 2.5rem 0 2rem 0;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      background: #e3e6ea;
+    }
+    header h1 {
+      margin: 0.5rem 0 0.2rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0 0 1.2rem 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .social-links a {
+      color: #fff;
+      font-size: 1.7rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #43b0f1;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 12px 0 rgba(60, 72, 88, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.7rem 0;
+      gap: 2rem;
+    }
+    nav a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #222;
+    }
+    #main-content {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+    section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.10);
+      padding: 2.2rem 2rem;
+      min-height: 20vh;
+      width: 90vw;
+      box-sizing: border-box;
+    }
+    h2 {
+      color: #6c63ff;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #43b0f1;
+      padding-left: 0.7rem;
+      background: #f2f4fa;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .badge {
+      background: #f2f4fa;
+      color: #6c63ff;
+      border: 1.5px solid #e3e6ea;
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+    }
+    .badge:hover {
+      background: #6c63ff;
+      color: #fff;
+    }
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .project {
+      background: #f2f4fa;
+      border: 1.5px solid #e3e6ea;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      min-width: 220px;
+      max-width: 320px;
+      box-shadow: 0 0 12px #e3e6ea33;
+      transition: box-shadow 0.3s, border 0.3s;
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #43b0f1;
+    }
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .cert-list li {
+      display: flex;
+      align-items: center;
+      background: #f2f4fa;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: 1.5px solid #e3e6ea;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cert-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .cert-list img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      margin-right: 1rem;
+      flex-shrink: 0;
+      background: #fff;
+      object-fit: contain;
+    }
+    .cert-list a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .cert-list a:hover {
+      color: #43b0f1;
+    }
+    .edu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .edu-list li {
+      background: #f2f4fa;
+      border: 1.5px solid #e3e6ea;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      color: #3c4858;
+    }
+    @media (max-width: 700px) {
+      section { padding: 1.2rem 0.5rem; width: 98vw; }
+      .project-grid { flex-direction: column; align-items: center; }
+      nav ul { gap: 0.7rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav id="navbar">
+  <header>
+    <img src="profile.png" alt="Ranjeet Singh">
+    <h1>Ranjeet Singh</h1>
+    <p>Software Developer | Cloud & DevOps Enthusiast</p>
+    <div class="social-links">
+      <a href="https://github.com/Ranjeet20BCS4012" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ranjeetsingh2002" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </header>
+  <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#certifications">Certifications</a></li>
     </ul>
   </nav>
-
-  <!-- Home Section -->
-  <section id="home" class="section">
-    <div class="container">
-      <img src="profile.jpg" alt="Ranjeet Singh">
-      <h1>Ranjeet Singh</h1>
-      <p>Software Developer | Cloud & DevOps Enthusiast</p>
-      <div class="social-links">
-        <a href="https://github.com/Ranjeet20BCS4012" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/ranjeetsingh2002" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
+  <div id="main-content">
+    <section id="about">
       <h2>About Me</h2>
-      <p>
-        Motivated individual with in-depth knowledge of programming languages and developer tools, seeking a position in a growth-oriented company where I can harness my skills for mutual advancement. My experience includes developing robust software solutions and working collaboratively in team environments.
-      </p>
-      <h3>Interests & Hobbies</h3>
-      <p>Reading | Travelling | Cricket | Documentaries</p>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="section">
-    <div class="container">
+      <p>Motivated individual with in-depth knowledge of programming languages and developer tools, seeking a position in a growth-oriented company where I can harness my skills for mutual advancement. My experience includes developing robust software solutions and working collaboratively in team environments.</p>
+      <p>Interests: Reading | Travelling | Cricket | Documentaries</p>
+    </section>
+    <section id="education">
       <h2>Education</h2>
-      <div class="education-grid">
-        <div class="education-item">
-          <h3>Master of Engineering (Cloud Computing)</h3>
-          <p>Chandigarh University<br>2024 - Present | CGPA: 7.93</p>
-        </div>
-        <div class="education-item">
-          <h3>Bachelor of Engineering (Cloud Computing)</h3>
-          <p>Chandigarh University<br>2020 - 2024 | CGPA: 6.59</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>Java</li>
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>SQL</li>
-        <li>DevOps</li>
-        <li>Git</li>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>Cloud Computing</li>
-        <li>AWS</li>
-        <li>PHP</li>
-        <li>HTML & CSS</li>
+      <ul class="edu-list">
+        <li><strong>Master of Engineering (Cloud Computing)</strong><br>Chandigarh University<br>2024 - Present | CGPA: 7.93</li>
+        <li><strong>Bachelor of Engineering (Cloud Computing)</strong><br>Chandigarh University<br>2020 - 2024 | CGPA: 6.59</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <div class="container">
+    </section>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="badges">
+        <span class="badge">Java</span>
+        <span class="badge">Python</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">SQL</span>
+        <span class="badge">DevOps</span>
+        <span class="badge">Git</span>
+        <span class="badge">React.js</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Cloud Computing</span>
+        <span class="badge">AWS</span>
+        <span class="badge">PHP</span>
+        <span class="badge">HTML & CSS</span>
+      </div>
+    </section>
+    <section id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
         <div class="project">
@@ -113,41 +278,38 @@
           <p>AI-powered personal assistant using NLP and ML, automating tasks and boosting productivity.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements" class="section">
-    <div class="container">
-      <h2>Achievements & Certifications</h2>
-      <ul>
-        <li><a href="https://www.credly.com/badges/1b30eba8-de1e-47c1-9824-f8ab7bc94553/public_url" target="_blank">AWS Certified Cloud Practitioner</a></li>
-        <li><a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7CA2F0D67845FD917DC6FA671252FADE36CBF3D362FEB4BC93FBDBD099482D1D" target="_blank">Oracle DevOps Professional (2025)</a></li>
-        <li>NCC - B Certificate (Grade A)</li>
-        <li>Cloud Bootcamp sponsored by Google for Developers</li>
-        <li>Modern Application Development with Python on AWS</li>
+    </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>
+          <img src="aws.png" alt="AWS Logo">
+          <a href="https://www.credly.com/badges/1b30eba8-de1e-47c1-9824-f8ab7bc94553/public_url" target="_blank">AWS Certified Cloud Practitioner</a>
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle Logo">
+          <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=7CA2F0D67845FD917DC6FA671252FADE36CBF3D362FEB4BC93FBDBD099482D1D" target="_blank">Oracle DevOps Professional (2025)</a>
+        </li>
+        <li>
+          <img src="NCC.png" alt="NCC Logo">
+          NCC - B Certificate (Grade A)
+        </li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Scroll to Top Button -->
-  <div id="scroll-to-top"><i class="fas fa-arrow-up"></i></div>
-
-  <!-- Scripts -->
+    </section>
+  </div>
+  <div id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;background:#6c63ff;color:#fff;border:none;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:background 0.3s,transform 0.3s;z-index:100;"><i class="fas fa-arrow-up"></i></div>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
-
+    // Show scroll-to-top button
     const scrollToTopButton = document.getElementById('scroll-to-top');
     window.addEventListener('scroll', () => {
-      scrollToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    scrollToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
     });
   </script>
 </body>
